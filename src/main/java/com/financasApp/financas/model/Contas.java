@@ -15,7 +15,7 @@ public class Contas implements Serializable {
 	
 	private double saldo;
 	private String tipoConta;
-	private String instituiçãoFinanceira;
+	private String instituicaoFinanceira;
 	
 	
 	
@@ -23,13 +23,23 @@ public class Contas implements Serializable {
 		super();
 	}
 
-	public Contas(double saldo, String tipoConta, String instituiçãoFinanceira) {
+	public Contas(double saldo, String tipoConta, String instituicaoFinanceira) {
 		super();
 		this.saldo = saldo;
 		this.tipoConta = tipoConta;
-		this.instituiçãoFinanceira = instituiçãoFinanceira;
+		this.instituicaoFinanceira = instituicaoFinanceira;
 	}
 	
+	
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public double getSaldo() {
 		return saldo;
 	}
@@ -44,11 +54,11 @@ public class Contas implements Serializable {
 		this.tipoConta = tipoConta;
 	}
 	
-	public String getInstituiçãoFinanceira() {
-		return instituiçãoFinanceira;
+	public String getInstituicaoFinanceira() {
+		return instituicaoFinanceira;
 	}
-	public void setInstituiçãoFinanceira(String instituiçãoFinanceira) {
-		this.instituiçãoFinanceira = instituiçãoFinanceira;
+	public void setInstituicaoFinanceira(String instituicaoFinanceira) {
+		this.instituicaoFinanceira = instituicaoFinanceira;
 	}
 	
 	
