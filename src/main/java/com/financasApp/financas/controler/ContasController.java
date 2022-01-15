@@ -56,18 +56,11 @@ public class ContasController {
 	@RequestMapping(value = "/transfereSaldoConta")
 	public boolean transferirSaldoConta(@RequestBody TransferenciaDTO transferencia) {
 		
+		Contas contaOrigem = cr.findById(transferencia.getIdOrigem());
+		Contas contaDestino = cr.findById(transferencia.getIdDestino());
 		
-		System.out.println(transferencia.getQuantia());
-		
-		
-		Contas contaOrigem = cr.findByinstituicaoFinanceira(transferencia.getInstituicaoOrigem());
-		Contas contaDestino = cr.findByinstituicaoFinanceira(transferencia.getInstituicaoDestino());
-		
-		System.out.println(contaOrigem.getSaldo());
-		System.out.println(contaDestino.getSaldo());
 		
 		if(contaOrigem.getSaldo() >= transferencia.getQuantia()) {
-			System.out.println("entrou");
 			contaOrigem.setSaldo(contaOrigem.getSaldo() - transferencia.getQuantia());
 			contaDestino.setSaldo(contaDestino.getSaldo() + transferencia.getQuantia());
 			

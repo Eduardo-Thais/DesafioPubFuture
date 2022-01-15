@@ -17,25 +17,27 @@ public class Despesas implements Serializable {
 	private double valor;
 	private String dataPagamento;
 	private String dataPagamentoEsperado;
-	private String tipoDespesa;
-	private String conta;
 	
 	
 	
+	@ManyToOne
+	@JoinColumn(name = "conta",referencedColumnName = "id", nullable=false)
+	private Contas conta;
+	
+	@ManyToOne
+	@JoinColumn(name = "tipoDespesa",referencedColumnName = "id", nullable=false)
+	private TipoDespesa tipoDespesa;
 	
 	
 	public Despesas() {
 		super();
 	}
 	
-	public Despesas(double valor, String dataPagamento, String dataPagamentoEsperado, String tipoDespesa,
-			String conta) {
+	public Despesas(double valor, String dataPagamento, String dataPagamentoEsperado) {
 		super();
 		this.valor = valor;
 		this.dataPagamento = dataPagamento;
 		this.dataPagamentoEsperado = dataPagamentoEsperado;
-		this.tipoDespesa = tipoDespesa;
-		this.conta = conta;
 	}
 	
 	
@@ -69,17 +71,17 @@ public class Despesas implements Serializable {
 		this.dataPagamentoEsperado = dataPagamentoEsperado;
 	}
 	
-	public String getTipoDespesa() {
+	public TipoDespesa getTipoDespesa() {
 		return tipoDespesa;
 	}
-	public void setTipoDespesa(String tipoDespesa) {
+	public void setTipoDespesa(TipoDespesa tipoDespesa) {
 		this.tipoDespesa = tipoDespesa;
 	}
 	
-	public String getConta() {
+	public Contas getConta() {
 		return conta;
 	}
-	public void setConta(String conta) {
+	public void setConta(Contas conta) {
 		this.conta = conta;
 	}
 	

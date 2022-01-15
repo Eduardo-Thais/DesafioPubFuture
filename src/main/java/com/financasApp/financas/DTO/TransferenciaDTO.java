@@ -1,8 +1,8 @@
 package com.financasApp.financas.DTO;
 
 public class TransferenciaDTO {
-	private String instituicaoOrigem;
-	private String instituicaoDestino;
+	private Long idOrigem;
+	private Long idDestino;
 	private double quantia;
 	
 	
@@ -13,28 +13,41 @@ public class TransferenciaDTO {
 		super();
 	}
 	
-	public TransferenciaDTO(String instituicaoOrigem, String instituicaoDestino, double quantia) {
+	
+	
+	public TransferenciaDTO(Long idOrigem, Long idDestino, double quantia) {
 		super();
-		this.instituicaoOrigem = instituicaoOrigem;
-		this.instituicaoDestino = instituicaoDestino;
+		this.idOrigem = idOrigem;
+		this.idDestino = idDestino;
 		this.quantia = quantia;
 	}
-	
-	
-	public String getInstituicaoOrigem() {
-		return instituicaoOrigem;
+
+
+
+	public Long getIdOrigem() {
+		return idOrigem;
 	}
-	public void setInstituicaoOrigem(String instituicaoOrigem) {
-		this.instituicaoOrigem = instituicaoOrigem;
+
+
+
+	public void setIdOrigem(Long idOrigem) {
+		this.idOrigem = idOrigem;
 	}
-	
-	public String getInstituicaoDestino() {
-		return instituicaoDestino;
+
+
+
+	public Long getIdDestino() {
+		return idDestino;
 	}
-	public void setInstituicaoDestino(String instituicaoDestino) {
-		this.instituicaoDestino = instituicaoDestino;
+
+
+
+	public void setIdDestino(Long idDestino) {
+		this.idDestino = idDestino;
 	}
-	
+
+
+
 	public double getQuantia() {
 		return quantia;
 	}

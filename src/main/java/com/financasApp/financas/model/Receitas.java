@@ -17,9 +17,15 @@ public class Receitas implements Serializable {
 	private double valor;
 	private String dataRecebimento;
 	private String dataRecebimentoEsperado;
-	private String descrição;
-	private String conta;
-	private String tipoReceita;
+	private String descricao;
+	
+	@ManyToOne
+	@JoinColumn(name = "tipoReceita",referencedColumnName = "id", nullable=false)
+	private TipoReceita tipoReceita;
+	
+	@ManyToOne
+	@JoinColumn(name = "conta",referencedColumnName = "id", nullable=false)
+	private Contas conta;
 	
 	
 	
@@ -29,15 +35,12 @@ public class Receitas implements Serializable {
 		super();
 	}
 	
-	public Receitas(double valor, String dataRecebimento, String dataRecebimentoEsperado, String descrição,
-			String conta, String tipoReceita) {
+	public Receitas(double valor, String dataRecebimento, String dataRecebimentoEsperado, String descricao) {
 		super();
 		this.valor = valor;
 		this.dataRecebimento = dataRecebimento;
 		this.dataRecebimentoEsperado = dataRecebimentoEsperado;
-		this.descrição = descrição;
-		this.conta = conta;
-		this.tipoReceita = tipoReceita;
+		this.descricao = descricao;
 	}
 	
 	
@@ -70,24 +73,24 @@ public class Receitas implements Serializable {
 		this.dataRecebimentoEsperado = dataRecebimentoEsperado;
 	}
 	
-	public String getDescrição() {
-		return descrição;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setDescrição(String descrição) {
-		this.descrição = descrição;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
-	public String getConta() {
+	public Contas getConta() {
 		return conta;
 	}
-	public void setConta(String conta) {
+	public void setConta(Contas conta) {
 		this.conta = conta;
 	}
 	
-	public String getTipoReceita() {
+	public TipoReceita getTipoReceita() {
 		return tipoReceita;
 	}
-	public void setTipoReceita(String tipoReceita) {
+	public void setTipoReceita(TipoReceita tipoReceita) {
 		this.tipoReceita = tipoReceita;
 	}
 	

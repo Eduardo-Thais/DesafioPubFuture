@@ -1,6 +1,8 @@
 package com.financasApp.financas.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -14,19 +16,26 @@ public class Contas implements Serializable {
 	private long id;
 	
 	private double saldo;
-	private String tipoConta;
 	private String instituicaoFinanceira;
 	
+	@ManyToOne
+	@JoinColumn(name = "tipoConta",referencedColumnName = "id", nullable=false)
+	private TipoConta tipoConta;
+	
+	@OneToMany(mappedBy = "conta")
+	private List<Receitas> receita = new ArrayList<>(0);
+	
+	@OneToMany(mappedBy = "conta")
+	private List<Despesas> despesa = new ArrayList<>(0);
 	
 	
 	public Contas() {
 		super();
 	}
 
-	public Contas(double saldo, String tipoConta, String instituicaoFinanceira) {
+	public Contas(double saldo, String instituicaoFinanceira) {
 		super();
 		this.saldo = saldo;
-		this.tipoConta = tipoConta;
 		this.instituicaoFinanceira = instituicaoFinanceira;
 	}
 	
@@ -47,13 +56,14 @@ public class Contas implements Serializable {
 		this.saldo = saldo;
 	}
 	
-	public String getTipoConta() {
+	public TipoConta getTipoConta() {
 		return tipoConta;
 	}
-	public void setTipoConta(String tipoConta) {
+
+	public void setTipoConta(TipoConta tipoConta) {
 		this.tipoConta = tipoConta;
 	}
-	
+
 	public String getInstituicaoFinanceira() {
 		return instituicaoFinanceira;
 	}
