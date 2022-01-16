@@ -74,3 +74,5 @@ Adicionar receita:
     "conta" : {"id": 1},
     "tipoReceita":{"id": 1}
 }
+
+todas as api que tiverem /{id} tera que ser informado o id do campo a ser selecionado
