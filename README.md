@@ -36,3 +36,41 @@ Para cadastrar nova conta
 e assim segue com todos as api que esta nas classes controller apenas alterando a escrita apos o "/" por um dos comandos que esta no request mapping
 
 ![image](https://user-images.githubusercontent.com/33501705/149664952-bf26844a-7d38-49f0-ad0c-29baec7d9626.png)
+
+
+o formato json para cada tipo de cadastro
+
+Adicionar tipos:
+
+{
+    "nome": "Carteira"
+}
+
+Adicionar conta:
+
+{
+    "instituicaoFinanceira": "instituição 01",
+    "saldo": 300,
+    "tipoConta": {"id": 1}
+}
+
+Adicionar despesas:
+
+{
+    "dataPagamento": "13/01/2022",
+    "dataPagamentoEsperado": "13/01/2022",
+    "valor": "99.50",
+    "conta" : {"id":1},
+    "tipoDespesa":{"id": 1}
+}
+
+Adicionar receita:
+
+{
+    "dataRecebimento": "5/02/2022",
+    "dataRecebimentoEsperado": "5/02/2022",
+    "descricao": "Salario do mes 01",
+    "valor": "1200",
+    "conta" : {"id": 1},
+    "tipoReceita":{"id": 1}
+}
