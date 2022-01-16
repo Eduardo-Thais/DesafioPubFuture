@@ -3,7 +3,7 @@
 Iniciando o projeto pela primeira vez
 
 1) Apos fazer o clone do repositorio abra o eclipse ide e importe o projeto como um projeto maven existente
-2) 
+
 ![image](https://user-images.githubusercontent.com/33501705/149663989-7fe96e52-41c1-45b0-a528-e0aecea44330.png)
 
 2)Abrir o XAMPP e iniciar o modulo do MySQL
