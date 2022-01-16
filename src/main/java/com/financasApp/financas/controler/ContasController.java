@@ -19,7 +19,7 @@ public class ContasController {
 	@Autowired
 	private ContasRepository cr;
 	
-	@RequestMapping(value = "/cadastrarContas", method = RequestMethod.POST)
+	@RequestMapping(value = "/cadastrarConta", method = RequestMethod.POST)
 	public boolean cadastrarConta(@RequestBody Contas conta){
 		
 		cr.save(conta);
