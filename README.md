@@ -22,3 +22,57 @@ Iniciando o projeto pela primeira vez
 ![image](https://user-images.githubusercontent.com/33501705/149664321-342f31e2-2ada-4cd2-adfc-2530cb75f617.png)
 
 Apos fazer esse processo ele vai criar as tabelas no banco financasdb e ja podera ser utilizado, caso queira rodar uma outra hora é so refazer o passo 5
+
+
+
+Para utilizar as api basta utilizar algum programa como postman e enviar um post pelo link http://localhost:8080/cadastrarTipoConta para cadastrar um tipo de conta.
+
+![image](https://user-images.githubusercontent.com/33501705/149664755-37ae00d9-ff3a-43bb-9cd4-7072df5bfecc.png)
+
+Para cadastrar nova conta 
+
+![image](https://user-images.githubusercontent.com/33501705/149664839-623582fe-019f-454f-965f-f21d904e23c0.png)
+
+e assim segue com todos as api que esta nas classes controller apenas alterando a escrita apos o "/" por um dos comandos que esta no request mapping
+
+![image](https://user-images.githubusercontent.com/33501705/149664952-bf26844a-7d38-49f0-ad0c-29baec7d9626.png)
+
+
+o formato json para cada tipo de cadastro
+
+Adicionar tipos:
+
+{
+    "nome": "Carteira"
+}
+
+Adicionar conta:
+
+{
+    "instituicaoFinanceira": "instituição 01",
+    "saldo": 300,
+    "tipoConta": {"id": 1}
+}
+
+Adicionar despesas:
+
+{
+    "dataPagamento": "13/01/2022",
+    "dataPagamentoEsperado": "13/01/2022",
+    "valor": "99.50",
+    "conta" : {"id":1},
+    "tipoDespesa":{"id": 1}
+}
+
+Adicionar receita:
+
+{
+    "dataRecebimento": "5/02/2022",
+    "dataRecebimentoEsperado": "5/02/2022",
+    "descricao": "Salario do mes 01",
+    "valor": "1200",
+    "conta" : {"id": 1},
+    "tipoReceita":{"id": 1}
+}
+
+todas as api que tiverem /{id} tera que ser informado o id do campo a ser selecionado
