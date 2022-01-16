@@ -20,6 +20,7 @@ public class DespesasController {
 	@Autowired
 	private DespesasRepository dr;
 	
+	
 	@RequestMapping(value = "/cadastrarDespesa", method = RequestMethod.POST)
 	public boolean cadastrarDespesa(@RequestBody Despesas despesa){
 		
