@@ -27,8 +27,8 @@ public class ReceitasController {
 		
 	}
 	
-	@RequestMapping(value = "/editaReceita")
-	public boolean editaReceitas(@RequestBody Receitas receita, long id) {
+	@RequestMapping(value = "/editaReceita/{id}")
+	public boolean editaReceitas(@RequestBody Receitas receita,@PathVariable long id) {
 		receita.setId(id);
 		
 		rr.save(receita);

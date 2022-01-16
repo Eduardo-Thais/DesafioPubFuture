@@ -25,8 +25,8 @@ public class TipoContaController {
 		
 	}
 	
-	@RequestMapping(value = "/editaTipoConta")
-	public boolean editaTipoConta(@RequestBody TipoConta tipoConta, long id) {
+	@RequestMapping(value = "/editaTipoConta/{id}")
+	public boolean editaTipoConta(@RequestBody TipoConta tipoConta,@PathVariable long id) {
 		tipoConta.setId(id);
 		
 		tcr.save(tipoConta);

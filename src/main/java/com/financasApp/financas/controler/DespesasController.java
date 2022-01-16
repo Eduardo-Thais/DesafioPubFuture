@@ -30,8 +30,8 @@ public class DespesasController {
 		
 	}
 	
-	@RequestMapping(value = "/editaDespesa")
-	public boolean editaDespesa(@RequestBody Despesas despesa, long id) {
+	@RequestMapping(value = "/editaDespesa/{id}")
+	public boolean editaDespesa(@RequestBody Despesas despesa,@PathVariable long id) {
 		despesa.setId(id);
 		
 		dr.save(despesa);

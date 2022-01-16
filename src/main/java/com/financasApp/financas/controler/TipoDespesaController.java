@@ -26,8 +26,8 @@ public class TipoDespesaController {
 		
 	}
 	
-	@RequestMapping(value = "/editaTipoDespesa")
-	public boolean editaTipoDespesa(@RequestBody TipoDespesa tipoDespesa, long id) {
+	@RequestMapping(value = "/editaTipoDespesa/{id}")
+	public boolean editaTipoDespesa(@RequestBody TipoDespesa tipoDespesa,@PathVariable long id) {
 		tipoDespesa.setId(id);
 		
 		tdr.save(tipoDespesa);

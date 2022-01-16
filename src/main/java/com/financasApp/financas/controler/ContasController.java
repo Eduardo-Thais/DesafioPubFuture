@@ -28,8 +28,8 @@ public class ContasController {
 		
 	}
 	
-	@RequestMapping(value = "/editaConta")
-	public boolean editaConta(@RequestBody Contas conta, long id) {
+	@RequestMapping(value = "/editaConta/{id}")
+	public boolean editaConta(@RequestBody Contas conta,@PathVariable long id) {
 		conta.setId(id);
 		
 		cr.save(conta);

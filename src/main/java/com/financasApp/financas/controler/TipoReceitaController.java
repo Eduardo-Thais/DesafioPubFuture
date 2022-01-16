@@ -25,8 +25,8 @@ public class TipoReceitaController {
 		
 	}
 	
-	@RequestMapping(value = "/editaTipoReceita")
-	public boolean editaTipoReceita(@RequestBody TipoReceita tipoReceita, long id) {
+	@RequestMapping(value = "/editaTipoReceita/{id}")
+	public boolean editaTipoReceita(@RequestBody TipoReceita tipoReceita,@PathVariable long id) {
 		tipoReceita.setId(id);
 		
 		trr.save(tipoReceita);
